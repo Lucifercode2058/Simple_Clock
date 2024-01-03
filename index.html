@@ -1,130 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Portfolio Website</title>
-    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
-    <script src="./script.js"> </script>
-    <link rel="stylesheet" href="style.css" />
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Simple-Watch</title>
+  <script>
+    function updateClock() {
+    let currenttime = new Date();
     
-    <style>
-      a {
-        text-decoration: none;
-        font-size: larger;
-        color: black;
-        /* align-items: baseline; */
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
-      }
+    let hour = currenttime.getHours();
+    let min = currenttime.getMinutes();
+    let sec = currenttime.getSeconds();
+    
+    document.getElementsByClassName("hours")[0].innerHTML = `${hour}`;
+    document.getElementsByClassName("min")[0].innerHTML = `${min}`;
+    document.getElementsByClassName("sec")[0].innerHTML = `${sec}`;
+}
 
-      nav {
-        display: flex;
-        justify-content: space-between;
-        text-align: center;
-      }
+setInterval(updateClock, 1000);  // Update every second
+setInterval(updateClock, 1000 * 60);  // Update every minute
+setInterval(updateClock, 1000 * 60 * 60);  // Update every hour
 
-      /* .nav1{
-        margin-right: 2%;
-        word-spacing: 5rem;
-        padding: 10px 10px;
-       }
-        */
+  </script>
+  <style>
+    
+  </style>
+</head>
+<body>
+  <div class="clock" style="color:blue">
+    HOURS:
+    <div class="hours" style="height: 100px; background-color: rgb(205, 200, 155); width: 33.33%;">
 
-      .con {
-        display: flex;
-        justify-content: space-between;
-        margin-top: 100px;
-        /* align-content: flex-start; */
-      }
-      .hi {
-        margin: 50px 0px 0px 100px;
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
-      }
-      header {
-        box-shadow: 10px rgb(238, 225, 202);
-      }
-      nav {
-        display: flex;
-        justify-content: space-around;
-        word-spacing: 100px;
-        align-items: center;
-      }
-      #rabean {
-        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
-          sans-serif;
-        position: sticky;
-        margin-right: 400px;
-      }
-      a:hover{
-        text-decoration: underline;
-        font-weight: 200;
-        color: cornflowerblue;
-        position: static;
-      }
-    </style>
-  </head>
-  <body>
-    <header id="nav">
-      <nav>
-        <h1 id="rabean">Rabean</h1>
-        <div class="nav1">
-          <a href="#">Home</a>
-          <a href="#">About</a>
-          <a href="#">Contact</a>
-          <a href="#">Skills</a>
-        </div>
-      </nav>
-    </header>
-    <hr
-      style="
-        color: blue;
-        height: 2px;
-        background-color: black;
-        border-radius: 2rem;
-      "
-    />
-    <div class="con">
-      <div class="hi">
-        <h1 id="info">
-          Hi,<br />I'am <span style="color: blue">Rabean</span><br />Web
-          Developer
-        </h1>
-        <input
-          type="button"
-          id="button"
-          value="Contact"
-          style="
-            font-family: 'Gill Sans';
-            margin-top: 50px;
-            background-color: cornflowerblue;
-            width: 150px;
-            height: 40px;
-            border-radius: 10px;
-            color: beige;
-            font-size: larger;
-          "
-        />
-      </div>
-      <section>
-        <img
-          src="./dev.jpeg"
-          alt="h"
-          height="500px"
-          style="border-radius: 100%"
-        />
-      </section>
     </div>
-    <!-- <div id="form">
-        <h1>Hello world</h1> -->
+    MINUTES:
+    <div class="min" style="height: 100px; background-color: rgb(206, 170, 202); width: 33.33%;">
+
     </div>
-    <hr style="margin-top: 20px;">
-    <footer>
-        <div class="foter">
-            <p>&copy; RabeanSubedi</p>
-        </div>
-    </footer>
-  </body>
+    SECONDS:
+    <div class="sec" style="height: 100px; background-color: aqua; width: 33.33%;">
+
+    </div>
+  </div>
+</body>
 </html>
